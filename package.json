@@ -1,0 +1,30 @@
+{
+    "name": "starter-wdio",
+    "version": "1.0.0",
+    "description": "UI Test automation framework based on WebdriverIO",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "wdio": "wdio run wdio.conf.ts"
+    },
+    "keywords": [
+        "wdio",
+        "cucumber",
+        "gherkin",
+        "typescript"
+    ],
+    "author": "Lorblak",
+    "license": "ISC",
+    "devDependencies": {
+        "@wdio/allure-reporter": "^7.16.11",
+        "@wdio/cli": "^7.16.12",
+        "@wdio/cucumber-framework": "^7.16.12",
+        "@wdio/junit-reporter": "^7.16.12",
+        "@wdio/local-runner": "^7.16.12",
+        "@wdio/spec-reporter": "^7.16.11",
+        "chromedriver": "^96.0.0",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.5.4",
+        "wdio-chromedriver-service": "^7.2.2"
+    }
+}
