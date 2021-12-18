@@ -251,8 +251,9 @@ export const config: WebdriverIO.Config = {
      * @param {number}             result.duration  duration of scenario in milliseconds
      * @param {Object}             context          Cucumber World object
      */
-    // afterStep: function (step, scenario, result, context) {
-    // },
+    afterStep: async function () {
+        await browser.takeScreenshot();
+    },
     /**
      *
      * Runs after a Cucumber Scenario.
