@@ -3,3 +3,12 @@ allure-results
 allure-report
 *.log
 *.swp
+junit-report/
+junit-results/
+reports/
+typescript/
+.vscode
+.tsbuild
+.DS_Store
+.env
+screenshots/
