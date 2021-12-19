@@ -64,3 +64,16 @@ En el archivo `package.json` agregamos en `"scripts"`:
 ```
 "open-report": "allure open"
 ```
+
+## Creando features
+Para agilizar el trabajo, se recomienda modificar el nombre de la feature en el **spec** en **configs**. Podemos usar **Tidy Gherkin** para crear las steps defitions a partir de los steps en nuestra feature. Instalamos la extensión y accedemos desde `chrome//apps`.
+
+1. Crear `feature` en nuestro directorio de features.
+2. Ejecutar las pruebas para identificar los __steps__ fallidos.
+3. Crear un archivo `*.steps.ts` con la siguiente definición de los pasos:
+```javascript
+import {Given, Then} from '@cucumber/cucumber'
+// ...
+```
+4. Abrimos **Tidy Gherkin** y pegamos nuestros steps de `*.feature`.
+5. Ejecutamos la extensión y lo pegamos en nuestro `*steps.ts`.
