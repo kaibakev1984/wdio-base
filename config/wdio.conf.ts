@@ -140,7 +140,7 @@ export const config: WebdriverIO.Config = {
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
         require: [
-            './features/step-definitions/forms.steps.ts'
+            './step-definitions/forms.steps.ts'
         ],
         // <boolean> show full backtrace for errors
         backtrace: false,

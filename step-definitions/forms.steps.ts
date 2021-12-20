@@ -1,5 +1,5 @@
 import {Given, When, Then} from '@cucumber/cucumber';
-import FormsPage from '../pageobjects/forms.page';
+import FormsPage from '../pages/forms.page';
 
 Given(/^I open the browser and load the url (.+)$/, async (pageurl) => {
    await FormsPage.openPage(pageurl);
