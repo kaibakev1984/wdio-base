@@ -21,7 +21,7 @@ export const config: WebdriverIO.Config = {
     // will be called from there.
     //
     specs: [
-        './features/**/forms.feature',
+        './features/**/home.feature',
     ],
     // Patterns to exclude.
     exclude: [
@@ -140,7 +140,7 @@ export const config: WebdriverIO.Config = {
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
         require: [
-            './features/step-definitions/forms.steps.ts'
+            './features/step-definitions/home.steps.ts'
         ],
         // <boolean> show full backtrace for errors
         backtrace: false,
