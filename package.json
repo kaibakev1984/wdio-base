@@ -4,7 +4,7 @@
     "description": "UI Test automation framework based on WebdriverIO",
     "main": "index.js",
     "scripts": {
-        "clean": "rimraf .tsbuild && rimraf allure-results && rimraf junit-results",
+        "clean": "rimraf .tsbuild && rimraf allure-results && rimraf junit-results rimraf allure-report",
         "clean-report": "allure generate --clean ./allure-results",
         "open-report": "allure open",
         "wdio:web": "wdio run ./config/wdio.web.conf.ts",
