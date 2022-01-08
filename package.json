@@ -4,11 +4,10 @@
     "description": "UI Test automation framework based on WebdriverIO",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "clean": "rimraf .tsbuild && rimraf allure-results && rimraf junit-results",
         "clean-report": "allure generate --clean ./allure-results",
         "open-report": "allure open",
-        "wdio": "wdio run ./config/wdio.conf.ts",
+        "wdio:web": "wdio run ./config/wdio.web.conf.ts",
         "wdio:dock": "wdio run ./config/wdio.dock.conf.ts"
     },
     "keywords": [
