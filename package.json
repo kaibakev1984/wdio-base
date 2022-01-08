@@ -8,7 +8,8 @@
         "clean": "rimraf .tsbuild && rimraf allure-results && rimraf junit-results",
         "clean-report": "allure generate --clean ./allure-results",
         "open-report": "allure open",
-        "wdio": "wdio run ./config/wdio.conf.ts"
+        "wdio": "wdio run ./config/wdio.conf.ts",
+        "wdio:dock": "wdio run ./config/wdio.dock.conf.ts"
     },
     "keywords": [
         "wdio",
