@@ -19,7 +19,7 @@ jobs:
     - name: SetUp NodeJs
       uses: actions/setup-node@v2
       with:
-        node-version: 8.3.0
+        node-version: 16.3.0
         cache: 'npm'
     - run: npm install
     - run: npm run wdio
