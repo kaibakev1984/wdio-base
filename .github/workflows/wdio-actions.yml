@@ -24,4 +24,4 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: run test
-        run: npm run wdio
+        run: npm run wdio:dock
