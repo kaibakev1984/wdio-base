@@ -4,6 +4,8 @@ export const config: WebdriverIO.Config = {
     // Runner Configuration
     // ====================
     //
+    // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
+    // on a remote machine).
     //
     // ==================
     // Specify Test Files
@@ -21,7 +23,7 @@ export const config: WebdriverIO.Config = {
     // will be called from there.
     //
     specs: [
-        './features/**/forms.feature',
+        './features/forms.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -54,7 +56,7 @@ export const config: WebdriverIO.Config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 5,
+        maxInstances: 1,
         //
         browserName: 'chrome',
         acceptInsecureCerts: true
@@ -70,7 +72,7 @@ export const config: WebdriverIO.Config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'debug',
     //
     // Set specific log levels per logger
     // loggers:
@@ -140,7 +142,7 @@ export const config: WebdriverIO.Config = {
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
         require: [
-            './step-definitions/forms.steps.ts'
+            './stepDefinitions/forms.steps.ts'
         ],
         // <boolean> show full backtrace for errors
         backtrace: false,

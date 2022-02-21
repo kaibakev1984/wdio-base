@@ -16,50 +16,34 @@ class FormsPage extends Page {
     ["Music", '//*[@id="hobbiesWrapper"]/div[2]/div[3]'],
   ]);
 
-  public get inputFirstname(): ChainablePromiseElement<
-    Promise<WebdriverIO.Element>
-  > {
+  public get inputFirstname() {
     return $("[id=firstName]");
   }
-  public get inputLastname(): ChainablePromiseElement<
-    Promise<WebdriverIO.Element>
-  > {
+  public get inputLastname() {
     return $("[id=lastName]");
   }
 
-  public get inputEmail(): ChainablePromiseElement<
-    Promise<WebdriverIO.Element>
-  > {
+  public get inputEmail() {
     return $("[id=userEmail]");
   }
 
-  public get inputSubject(): ChainablePromiseElement<
-    Promise<WebdriverIO.Element>
-  > {
+  public get inputSubject() {
     return $("[id=subjectsInput]");
   }
 
-  public get inputMobileNumberInput(): ChainablePromiseElement<
-    Promise<WebdriverIO.Element>
-  > {
+  public get inputMobileNumberInput() {
     return $("[id=userNumber]");
   }
 
-  public get inputAddress(): ChainablePromiseElement<
-    Promise<WebdriverIO.Element>
-  > {
+  public get inputAddress() {
     return $("[id=currentAddress]");
   }
 
-  public get btnSubmit(): ChainablePromiseElement<
-    Promise<WebdriverIO.Element>
-  > {
+  public get btnSubmit() {
     return $("[id=submit]");
   }
 
-  public get messageModal(): ChainablePromiseElement<
-    Promise<WebdriverIO.Element>
-  > {
+  public get messageModal() {
     return $("[id=example-modal-sizes-title-lg]");
   }
   public async enterFirstnameAndLastname(
