@@ -10,9 +10,9 @@ class FormsPage extends Page {
   ]);
 
   hobbies = new Map<string, string>([
-    ["Sports", '//*[@id="hobbiesWrapper"]/div[2]/div[1]'],
-    ["Reading", '//*[@id="hobbiesWrapper"]/div[2]/div[2]'],
-    ["Music", '//*[@id="hobbiesWrapper"]/div[2]/div[3]'],
+    ["Sports", "//label[normalize-space()='Sports']"],
+    ["Reading", "//label[normalize-space()='Reading']"],
+    ["Music", "//label[normalize-space()='Music']"],
   ]);
 
   public get inputFirstname() {
