@@ -10,8 +10,8 @@ Feature: Practice Form - Demo QA
     When I enter subject <subjects>
     When I click on hobbies <hobbies>
     When I enter current address <currentAddress>
-    When I click on button submit
-    Then I should see summiting message <message>
+    ## When I click on button submit
+    ## Then I should see summiting message <message>
     Examples:
       | homepageurl                                 | firstname | lastname | email                 | gender  | mobilenumber | birthdate   | subjects | hobbies | currentAddress  | message                        |
       | https://demoqa.com/automation-practice-form | Kevin     | Mitnick  | kmitnick@security.com | Male    | 1159932589   | 18 Apr 2001 | Maths    | Reading | Insecurity 123  | Thanks for submitting the form |

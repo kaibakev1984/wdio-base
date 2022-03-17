@@ -1,11 +1,42 @@
+const port = 4444;
+const hostname = "localhost";
+const path = "/wd/hub";
+const protocol = "http";
+
 export const config: WebdriverIO.Config = {
     //
     // ====================
     // Runner Configuration
     // ====================
+    // 
     //
-    // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
-    // on a remote machine).
+    // =====================
+    // ts-node Configurations
+    // =====================
+    // 
+    // You can write tests using TypeScript to get autocompletion and type safety.
+    // You will need typescript and ts-node installed as devDependencies. 
+    // WebdriverIO will automatically detect if these dependencies are installed 
+    // and will compile your config and tests for you. 
+    // If you need to configure how ts-node runs please use the
+    // environment variables for ts-node or use wdio config's autoCompileOpts section.
+    //
+    
+    // autoCompileOpts: {
+    //     autoCompile: true,
+    //     // see https://github.com/TypeStrong/ts-node#cli-and-programmatic-options
+    //     // for all available options
+    //     tsNodeOpts: {
+    //         transpileOnly: true,
+    //         project: 'test/tsconfig.json'
+    //     }
+    //     // tsconfig-paths is only used if "tsConfigPathsOpts" are provided, if you
+    //     // do please make sure "tsconfig-paths" is installed as dependency
+    //     //tsConfigPathsOpts: {
+    //     //    baseUrl: './'
+    //     //}
+    // },
+    
     //
     // ==================
     // Specify Test Files
@@ -52,18 +83,20 @@ export const config: WebdriverIO.Config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        maxInstances: 1,
-        browserName: 'chrome',
-        acceptInsecureCerts: true,
-        'goog:chromeOptions': {
-            args: [
-                '--no-sandbox',
-                '--disable-infobars',
-                '--headless',
-                '--disable-gpu',
-                '--window-size=1440,735'
-            ],
-        }
+    
+        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+        // grid with only 5 firefox instances available you can make sure that not more than
+        // 5 instances get started at a time.
+        //
+        browserName: "chrome",
+        hostname: hostname,
+        path: path,
+        port: port,
+        protocol: protocol
+        // If outputDir is provided WebdriverIO can capture driver session logs
+        // it is possible to configure which logTypes to include/exclude.
+        // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
+        // excludeDriverLogs: ['bugreport', 'server'],
     }],
     //
     // ===================
@@ -112,7 +145,7 @@ export const config: WebdriverIO.Config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver'],
+    services: ['docker'],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -266,6 +299,8 @@ export const config: WebdriverIO.Config = {
      * @param {number}             result.duration  duration of scenario in milliseconds
      * @param {Object}             context          Cucumber World object
      */
+    // afterStep: function (step, scenario, result, context) {
+    // },
     afterStep: async function () {
         await browser.takeScreenshot();
     },

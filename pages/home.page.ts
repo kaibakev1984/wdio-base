@@ -1,9 +1,8 @@
-import { ChainablePromiseElement } from 'webdriverio';
-
 import Page from './page';
 
 class HomePage extends Page {
-    public get header(): ChainablePromiseElement<Promise<WebdriverIO.Element>> {
+
+    public get header() {
         return $('.heading');
     } 
 

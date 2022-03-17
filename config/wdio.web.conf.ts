@@ -23,7 +23,7 @@ export const config: WebdriverIO.Config = {
     // will be called from there.
     //
     specs: [
-        './features/forms.feature'
+        './features/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -72,7 +72,7 @@ export const config: WebdriverIO.Config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'debug',
     //
     // Set specific log levels per logger
     // loggers:
@@ -134,7 +134,18 @@ export const config: WebdriverIO.Config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec','junit',['allure', {outputDir: 'allure-results'}]],
+    reporters: [
+        'spec',
+        ['junit', {
+            outputDir: 'junit-results',
+            outputFileFormat: (options: { cid: string; capabilities: any; }): string =>  {
+                return `results-${options.cid}.${options.capabilities.browserName}.xml`
+            },
+        }],
+        ['allure', {
+            outputDir: 'allure-results'
+        }]
+    ],
 
 
     //
@@ -142,7 +153,7 @@ export const config: WebdriverIO.Config = {
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
         require: [
-            './stepDefinitions/forms.steps.ts'
+            './stepDefinitions/*.ts'
         ],
         // <boolean> show full backtrace for errors
         backtrace: false,

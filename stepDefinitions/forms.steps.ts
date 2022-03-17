@@ -44,8 +44,6 @@ Given(/^I open the browser and load the url (.+)$/, async (pageurl) => {
   });
 
   Then(/^I should see summiting message (.+)$/, async (message) => {
-      // const messageModal = $('[id=example-modal-sizes-title-lg]');
-      // expect(await messageModal.getText()).toEqual(message);
       const messageModal = await FormsPage.getMessageModalText();
       expect(messageModal).toEqual(message);
  });
